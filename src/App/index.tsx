@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../logo.svg";
 import styles from "./App.module.css";
+import { API, graphqlOperation } from "aws-amplify";
 
 const App = () => (
   <div className={styles.app}>

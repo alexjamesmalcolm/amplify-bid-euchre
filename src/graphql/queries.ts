@@ -2,16 +2,52 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getBlog = /* GraphQL */ `
-  query GetBlog($id: ID!) {
-    getBlog(id: $id) {
+export const getPlayer = /* GraphQL */ `
+  query GetPlayer($id: ID!) {
+    getPlayer(id: $id) {
       id
-      name
-      posts {
+      position
+      lobbyId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listPlayers = /* GraphQL */ `
+  query ListPlayers(
+    $filter: ModelPlayerFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPlayers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        position
+        lobbyId
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getLobby = /* GraphQL */ `
+  query GetLobby($id: ID!) {
+    getLobby(id: $id) {
+      id
+      lobbyLeaderId
+      lobbyLeader {
+        id
+        position
+        lobbyId
+        createdAt
+        updatedAt
+      }
+      players {
         items {
           id
-          title
-          blogID
+          position
+          lobbyId
           createdAt
           updatedAt
         }
@@ -22,17 +58,24 @@ export const getBlog = /* GraphQL */ `
     }
   }
 `;
-export const listBlogs = /* GraphQL */ `
-  query ListBlogs(
-    $filter: ModelBlogFilterInput
+export const listLobbys = /* GraphQL */ `
+  query ListLobbys(
+    $filter: ModelLobbyFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listBlogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listLobbys(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
-        posts {
+        lobbyLeaderId
+        lobbyLeader {
+          id
+          position
+          lobbyId
+          createdAt
+          updatedAt
+        }
+        players {
           nextToken
         }
         createdAt
@@ -42,108 +85,50 @@ export const listBlogs = /* GraphQL */ `
     }
   }
 `;
-export const getPost = /* GraphQL */ `
-  query GetPost($id: ID!) {
-    getPost(id: $id) {
+export const getGame = /* GraphQL */ `
+  query GetGame($id: ID!) {
+    getGame(id: $id) {
       id
-      title
-      blogID
-      blog {
+      phase
+      lobbyId
+      lobby {
         id
-        name
-        posts {
+        lobbyLeaderId
+        lobbyLeader {
+          id
+          position
+          lobbyId
+          createdAt
+          updatedAt
+        }
+        players {
           nextToken
         }
         createdAt
         updatedAt
-      }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
       }
       createdAt
       updatedAt
     }
   }
 `;
-export const listPosts = /* GraphQL */ `
-  query ListPosts(
-    $filter: ModelPostFilterInput
+export const listGames = /* GraphQL */ `
+  query ListGames(
+    $filter: ModelGameFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPosts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        title
-        blogID
-        blog {
+        phase
+        lobbyId
+        lobby {
           id
-          name
+          lobbyLeaderId
           createdAt
           updatedAt
         }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getComment = /* GraphQL */ `
-  query GetComment($id: ID!) {
-    getComment(id: $id) {
-      id
-      postID
-      post {
-        id
-        title
-        blogID
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listComments = /* GraphQL */ `
-  query ListComments(
-    $filter: ModelCommentFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        postID
-        post {
-          id
-          title
-          blogID
-          createdAt
-          updatedAt
-        }
-        content
         createdAt
         updatedAt
       }

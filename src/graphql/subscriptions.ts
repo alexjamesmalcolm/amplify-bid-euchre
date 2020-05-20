@@ -2,16 +2,56 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateBlog = /* GraphQL */ `
-  subscription OnCreateBlog {
-    onCreateBlog {
+export const onCreatePlayer = /* GraphQL */ `
+  subscription OnCreatePlayer {
+    onCreatePlayer {
       id
-      name
-      posts {
+      position
+      lobbyId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePlayer = /* GraphQL */ `
+  subscription OnUpdatePlayer {
+    onUpdatePlayer {
+      id
+      position
+      lobbyId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePlayer = /* GraphQL */ `
+  subscription OnDeletePlayer {
+    onDeletePlayer {
+      id
+      position
+      lobbyId
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateLobby = /* GraphQL */ `
+  subscription OnCreateLobby {
+    onCreateLobby {
+      id
+      lobbyLeaderId
+      lobbyLeader {
+        id
+        position
+        lobbyId
+        createdAt
+        updatedAt
+      }
+      players {
         items {
           id
-          title
-          blogID
+          position
+          lobbyId
           createdAt
           updatedAt
         }
@@ -22,16 +62,23 @@ export const onCreateBlog = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateBlog = /* GraphQL */ `
-  subscription OnUpdateBlog {
-    onUpdateBlog {
+export const onUpdateLobby = /* GraphQL */ `
+  subscription OnUpdateLobby {
+    onUpdateLobby {
       id
-      name
-      posts {
+      lobbyLeaderId
+      lobbyLeader {
+        id
+        position
+        lobbyId
+        createdAt
+        updatedAt
+      }
+      players {
         items {
           id
-          title
-          blogID
+          position
+          lobbyId
           createdAt
           updatedAt
         }
@@ -42,16 +89,23 @@ export const onUpdateBlog = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteBlog = /* GraphQL */ `
-  subscription OnDeleteBlog {
-    onDeleteBlog {
+export const onDeleteLobby = /* GraphQL */ `
+  subscription OnDeleteLobby {
+    onDeleteLobby {
       id
-      name
-      posts {
+      lobbyLeaderId
+      lobbyLeader {
+        id
+        position
+        lobbyId
+        createdAt
+        updatedAt
+      }
+      players {
         items {
           id
-          title
-          blogID
+          position
+          lobbyId
           createdAt
           updatedAt
         }
@@ -62,172 +116,82 @@ export const onDeleteBlog = /* GraphQL */ `
     }
   }
 `;
-export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost {
-    onCreatePost {
+export const onCreateGame = /* GraphQL */ `
+  subscription OnCreateGame {
+    onCreateGame {
       id
-      title
-      blogID
-      blog {
+      phase
+      lobbyId
+      lobby {
         id
-        name
-        posts {
+        lobbyLeaderId
+        lobbyLeader {
+          id
+          position
+          lobbyId
+          createdAt
+          updatedAt
+        }
+        players {
           nextToken
         }
         createdAt
         updatedAt
-      }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
       }
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost {
-    onUpdatePost {
+export const onUpdateGame = /* GraphQL */ `
+  subscription OnUpdateGame {
+    onUpdateGame {
       id
-      title
-      blogID
-      blog {
+      phase
+      lobbyId
+      lobby {
         id
-        name
-        posts {
+        lobbyLeaderId
+        lobbyLeader {
+          id
+          position
+          lobbyId
+          createdAt
+          updatedAt
+        }
+        players {
           nextToken
         }
         createdAt
         updatedAt
-      }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
       }
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost {
-    onDeletePost {
+export const onDeleteGame = /* GraphQL */ `
+  subscription OnDeleteGame {
+    onDeleteGame {
       id
-      title
-      blogID
-      blog {
+      phase
+      lobbyId
+      lobby {
         id
-        name
-        posts {
+        lobbyLeaderId
+        lobbyLeader {
+          id
+          position
+          lobbyId
+          createdAt
+          updatedAt
+        }
+        players {
           nextToken
         }
         createdAt
         updatedAt
       }
-      comments {
-        items {
-          id
-          postID
-          content
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment {
-    onCreateComment {
-      id
-      postID
-      post {
-        id
-        title
-        blogID
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment {
-    onUpdateComment {
-      id
-      postID
-      post {
-        id
-        title
-        blogID
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      content
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment {
-    onDeleteComment {
-      id
-      postID
-      post {
-        id
-        title
-        blogID
-        blog {
-          id
-          name
-          createdAt
-          updatedAt
-        }
-        comments {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      content
       createdAt
       updatedAt
     }
