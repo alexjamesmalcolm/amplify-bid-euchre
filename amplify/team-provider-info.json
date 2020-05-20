@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-bideuchre-dev-214822-authRole",
+            "UnauthRoleArn": "arn:aws:iam::691857823715:role/amplify-bideuchre-dev-214822-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::691857823715:role/amplify-bideuchre-dev-214822-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-bideuchre-dev-214822-deployment",
+            "UnauthRoleName": "amplify-bideuchre-dev-214822-unauthRole",
+            "StackName": "amplify-bideuchre-dev-214822",
+            "StackId": "arn:aws:cloudformation:us-east-2:691857823715:stack/amplify-bideuchre-dev-214822/fd8bffa0-9a3b-11ea-a9b9-021a782363a8",
+            "AmplifyAppId": "dg0k545z81nyu"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "dg0k545z81nyu",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}
