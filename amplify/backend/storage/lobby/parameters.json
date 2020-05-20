@@ -1,0 +1,7 @@
+{
+    "tableName": "lobby",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S",
+    "sortKeyName": "createdAt",
+    "sortKeyType": "S"
+}

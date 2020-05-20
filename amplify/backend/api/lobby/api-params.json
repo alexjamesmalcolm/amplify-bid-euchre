@@ -1,0 +1,44 @@
+{
+    "paths": [
+        {
+            "name": "/lobby/{lobbyId}",
+            "lambdaFunction": "lobby",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            }
+        }
+    ],
+    "resourceName": "lobby",
+    "apiName": "lobby",
+    "functionArns": [
+        {
+            "lambdaFunction": "lobby"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-bideuchre-dev-214822-authRole",
+        "unAuthRoleName": "amplify-bideuchre-dev-214822-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "lobby",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
