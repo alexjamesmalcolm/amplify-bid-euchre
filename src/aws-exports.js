@@ -3,25 +3,11 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-2",
-    "aws_dynamodb_all_tables_region": "us-east-2",
-    "aws_dynamodb_table_schemas": [
-        {
-            "tableName": "lobby-dev",
-            "region": "us-east-2"
-        }
-    ],
     "aws_cognito_identity_pool_id": "us-east-2:2f09f967-493e-4117-8482-3e04489b1fda",
     "aws_cognito_region": "us-east-2",
     "aws_user_pools_id": "us-east-2_ll414UFIB",
     "aws_user_pools_web_client_id": "765si3422hr2mc57m6lsd4plsi",
-    "oauth": {},
-    "aws_cloud_logic_custom": [
-        {
-            "name": "lobby",
-            "endpoint": "https://2lxoe4h8t9.execute-api.us-east-2.amazonaws.com/dev",
-            "region": "us-east-2"
-        }
-    ]
+    "oauth": {}
 };
 
 
