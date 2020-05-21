@@ -7,10 +7,6 @@ interface IRoute {
   Component: Function;
 }
 
-interface IRoutes {
-  [routeKey: string]: IRoute;
-}
-
 const lobbies: IRoute = {
   name: "Lobbies",
   href: "/lobby",
@@ -21,8 +17,20 @@ const home: IRoute = {
   href: "/",
   Component: lazy(() => import("pages/Home")),
 };
+const lobby: IRoute = {
+  name: "Lobby",
+  href: "/lobby/{lobbyId}",
+  Component: lazy(() => import("pages/Lobby")),
+};
+const game: IRoute = {
+  name: "Game",
+  href: "/game/{gameId}",
+  Component: lazy(() => import("pages/Game")),
+};
 
 export const routes = {
   lobbies,
   home,
+  lobby,
+  game,
 };
