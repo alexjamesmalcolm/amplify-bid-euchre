@@ -1,25 +1,27 @@
-import React from "react";
-import logo from "../logo.svg";
-import styles from "./App.module.css";
-import { API, graphqlOperation } from "aws-amplify";
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { API, graphqlOperation, Auth } from "aws-amplify";
+// import {} from "../graphql/mutations";
+// import { withAuthenticator } from "@aws-amplify/ui-react";
+import { routes } from "config/routes";
 
-const App = () => (
-  <div className={styles.app}>
-    <header className={styles.header}>
-      <img src={logo} className={styles.logo} alt="logo" />
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        className={styles.link}
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
-);
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Suspense fallback={<p>Loading...</p>}>
+          {Object.entries(routes).map(
+            ([key, { href, isExternal = false, Component }]) =>
+              !isExternal && (
+                <Route key={key} path={href}>
+                  {<Component />}
+                </Route>
+              )
+          )}
+        </Suspense>
+      </Switch>
+    </Router>
+  );
+};
 
 export default App;
