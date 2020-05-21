@@ -4,16 +4,17 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import {} from "../graphql/mutations";
 // import { withAuthenticator } from "@aws-amplify/ui-react";
 import { routes } from "config/routes";
+import styles from "./App.module.css";
 
-const App = () => {
-  return (
+const App = () => (
+  <div className={styles.app}>
     <Router>
       <Switch>
         <Suspense fallback={<p>Loading...</p>}>
           {Object.entries(routes).map(
             ([key, { href, isExternal = false, Component }]) =>
               !isExternal && (
-                <Route key={key} path={href}>
+                <Route exact key={key} path={href}>
                   {<Component />}
                 </Route>
               )
@@ -21,7 +22,7 @@ const App = () => {
         </Suspense>
       </Switch>
     </Router>
-  );
-};
+  </div>
+);
 
 export default App;
