@@ -11,6 +11,9 @@ export const createPlayer = /* GraphQL */ `
       id
       position
       lobbyId
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -25,6 +28,9 @@ export const updatePlayer = /* GraphQL */ `
       id
       position
       lobbyId
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -39,6 +45,9 @@ export const deletePlayer = /* GraphQL */ `
       id
       position
       lobbyId
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -56,19 +65,19 @@ export const createLobby = /* GraphQL */ `
         id
         position
         lobbyId
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       players {
-        items {
-          id
-          position
-          lobbyId
-          createdAt
-          updatedAt
-        }
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -86,19 +95,19 @@ export const updateLobby = /* GraphQL */ `
         id
         position
         lobbyId
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       players {
-        items {
-          id
-          position
-          lobbyId
-          createdAt
-          updatedAt
-        }
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -116,19 +125,19 @@ export const deleteLobby = /* GraphQL */ `
         id
         position
         lobbyId
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       players {
-        items {
-          id
-          position
-          lobbyId
-          createdAt
-          updatedAt
-        }
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -146,19 +155,15 @@ export const createGame = /* GraphQL */ `
       lobby {
         id
         lobbyLeaderId
-        lobbyLeader {
-          id
-          position
-          lobbyId
-          createdAt
-          updatedAt
-        }
-        players {
-          nextToken
-        }
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -176,19 +181,15 @@ export const updateGame = /* GraphQL */ `
       lobby {
         id
         lobbyLeaderId
-        lobbyLeader {
-          id
-          position
-          lobbyId
-          createdAt
-          updatedAt
-        }
-        players {
-          nextToken
-        }
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -206,19 +207,15 @@ export const deleteGame = /* GraphQL */ `
       lobby {
         id
         lobbyLeaderId
-        lobbyLeader {
-          id
-          position
-          lobbyId
-          createdAt
-          updatedAt
-        }
-        players {
-          nextToken
-        }
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
